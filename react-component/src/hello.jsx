@@ -1,4 +1,9 @@
 function Hello(){
-    return <h3>Hello this is the future speaking</h3>
+    let name='yatin';
+    let fullname=()=>{
+        return 'yatingaur';
+    };
+    return <h3>Hello {name}this is the future {fullname()} speaking</h3>
 }
 export default Hello;
+
