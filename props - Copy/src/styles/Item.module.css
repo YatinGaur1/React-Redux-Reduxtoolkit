@@ -1,0 +1,11 @@
+.kg-item{
+    color: aquamarine;
+}
+.button{
+    float:right;
+}
+.active{
+    background-color:#94d1e1;
+    color: black;
+    border-color:#0d6efd ;
+}

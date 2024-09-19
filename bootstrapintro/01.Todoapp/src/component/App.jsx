@@ -2,6 +2,7 @@ import AddName from "./AddName";
 import AddTodo from './addToda';
 import AddTodo2 from "./addToda2";
 import AddTodo3 from "./addTodo3";
+import "../style/App.css"
 
 function App() {
   return (
