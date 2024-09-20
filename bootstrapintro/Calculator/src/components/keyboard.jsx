@@ -1,7 +1,7 @@
 import ItemButton from "./itembutton";
 import styles from "../styles/KeyBoard.module.css";
 
-function KeyBoard() {
+function KeyBoard({onBtnClk}) {
   let keyboard = [
     "C",
     "1",
@@ -24,7 +24,7 @@ function KeyBoard() {
   return (
     <div className={styles.buttoncontainer}>
       {keyboard.map((item) => (
-        <ItemButton key={item} keypad={item}></ItemButton>
+        <ItemButton key={item} keypad={item} onbtnclk={onBtnClk}></ItemButton>
       ))}
     </div>
   );
