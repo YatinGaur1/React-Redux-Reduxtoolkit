@@ -1,20 +1,18 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
 import { MdNoteAdd } from "react-icons/md";
 
 function AddTodo({ onNewItem }) {
-  let [todoName, setTodoName] = useState("");
-  let [dueDate, setDueDate] = useState("");
-
-  const handleOnChangeitem = (event) => {
-    setTodoName(event.target.value);
-  };
-  const handleOnChangedate = (event) => {
-    setDueDate(event.target.value);
-  };
+  const todoNameElement=useRef();
+  const todoDueDate=useRef();
+//to inside direct cd used
   const handleonclick = () => {
+    const todoName=todoNameElement.current.value;
+    const dueDate=todoDueDate.current.value;
+
     onNewItem(todoName, dueDate);
-    setTodoName("");
-    setDueDate("");
+    todoNameElement.current.value='';
+    todoDueDate.current.value='';
+
   };
 
   return (
@@ -25,16 +23,14 @@ function AddTodo({ onNewItem }) {
             type="text"
             placeholder="Enter todo here"
             className="inputsize"
-            value={todoName}
-            onChange={handleOnChangeitem}
+            ref={todoNameElement}
           />
         </div>
         <div class="col-4">
           <input
             type="date"
             className="inputsize"
-            value={dueDate}
-            onChange={handleOnChangedate}
+            ref={todoDueDate}
           />
         </div>
         <div class="col-2">

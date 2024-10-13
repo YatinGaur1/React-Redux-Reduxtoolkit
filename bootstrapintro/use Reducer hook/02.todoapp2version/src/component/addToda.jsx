@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MdNoteAdd } from "react-icons/md";
+import { TodoItemsContext } from "./store/todo-items-store";
 
-function AddTodo({ onNewItem }) {
+function AddTodo() {
+  const {addNewItem}=useContext(TodoItemsContext);
+
   let [todoName, setTodoName] = useState("");
   let [dueDate, setDueDate] = useState("");
 
@@ -12,7 +15,7 @@ function AddTodo({ onNewItem }) {
     setDueDate(event.target.value);
   };
   const handleonclick = () => {
-    onNewItem(todoName, dueDate);
+    addNewItem(todoName, dueDate);
     setTodoName("");
     setDueDate("");
   };
